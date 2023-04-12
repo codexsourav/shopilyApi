@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/admin": "pages/admin.html",
+  "/admin/orders": "pages/admin/orders.html",
+  "/admin/product/[productId]": "pages/admin/product/[productId].html",
+  "/admin/product/add": "pages/admin/product/add.html",
+  "/admin/product/private": "pages/admin/product/private.html",
+  "/admin/product/search": "pages/admin/product/search.html",
+  "/admin/products": "pages/admin/products.html",
+  "/api/hello": "pages/api/hello.js",
+  "/auth/login": "pages/auth/login.html",
+  "/": "pages/index.html",
+  "/404": "pages/404.html"
+}
