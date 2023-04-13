@@ -82,7 +82,6 @@ module.exports = {
             // get or set data 
             const id = req.authUser.id;
             productId = new mongoose.Types.ObjectId(productId);
-
             const response = await ManageCart.findOneAndUpdate({ "userId": id, productId }, { quantity }, { returnOriginal: false });
             res.send({ "success": true, response });
 

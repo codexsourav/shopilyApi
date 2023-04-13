@@ -1,5 +1,7 @@
 const ProductDB = require('../../model/productsSchema');
 const CartDB = require('../../model/CartSchema');
+const Orders = require('../../model/orderSchema');
+
 module.exports = {
     private: async (req, res) => {
         try {
@@ -98,6 +100,7 @@ module.exports = {
             let productId = req.params.pid;
             const product = await ProductDB.deleteOne({ _id: productId });
             const cart = await CartDB.deleteMany({ productId });
+            const Order = await Orders.deleteMany({ productId });
             res.send({ "success": true, "response": { product, cart } });
         } catch (error) {
             res.send({ "error": "Invalid Request / Server error" });
