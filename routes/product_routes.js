@@ -2,7 +2,6 @@ const express = require('express');
 const rating = require('../controller/products/rating');
 const product = require('../controller/products/product');
 const middleware = require('../middleware/chack-auth');
-var path = require('path');
 const router = express.Router();
 
 

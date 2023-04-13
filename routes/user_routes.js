@@ -3,14 +3,16 @@ const managecart = require('../controller/users/CartController');
 const middleware = require('../middleware/chack-auth');
 const adress = require('../controller/users/userAdress');
 const orders = require('../controller/users/Orders');
-
+const mail = require('../controller/mail');
+const path = require('path');
 
 
 
 const userRoutes = express.Router();
 userRoutes.get('/', (req, res) => {
-    res.send("<h1>Shopily API</h1>");
+    res.sendFile(path.join(__dirname + "/../view/index.html"))
 });
+
 
 // cart routes 
 userRoutes.get('/api/cart', middleware, managecart.cart);
@@ -24,6 +26,9 @@ userRoutes.put('/api/address', middleware, adress.updateAddress);
 userRoutes.get('/api/order/', middleware, orders.showOrders);
 userRoutes.post('/api/order/new/:id/:quantity', middleware, orders.placeOrder);
 userRoutes.post('/api/order/:id/cancel/', middleware, orders.cancelOrder);
+// for  contact 
+userRoutes.post('/api/contact', mail);
+
 
 
 
