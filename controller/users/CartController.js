@@ -4,7 +4,6 @@ module.exports = {
     // show the cart 
     cart: async (req, res) => {
         try {
-
             var userId = new mongoose.Types.ObjectId(req.authUser.id);
 
             var cart = await ManageCart.aggregate([

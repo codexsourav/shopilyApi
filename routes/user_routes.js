@@ -5,6 +5,7 @@ const adress = require('../controller/users/userAdress');
 const orders = require('../controller/users/Orders');
 const mail = require('../controller/mail');
 const path = require('path');
+const offers = require('../controller/products/offers');
 
 
 
@@ -28,6 +29,8 @@ userRoutes.post('/api/order/new/:id/:quantity', middleware, orders.placeOrder);
 userRoutes.post('/api/order/:id/cancel/', middleware, orders.cancelOrder);
 // for  contact 
 userRoutes.post('/api/contact', mail);
+// offers 
+userRoutes.get('/api/offer', offers.showOffer);
 
 
 
