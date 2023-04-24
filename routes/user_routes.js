@@ -11,7 +11,7 @@ const offers = require('../controller/products/offers');
 
 const userRoutes = express.Router();
 userRoutes.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + "/../view/index.html"))
+    res.sendFile(path.join(__dirname + "/../view/client/index.html"))
 });
 
 

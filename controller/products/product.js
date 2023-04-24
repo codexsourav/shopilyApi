@@ -33,7 +33,7 @@ module.exports = {
             const fld = data.filter ?? 'sell';
             const sort = data.sort ? -1 : 1;
             // console.log(fld, sort);
-            res.send(await ProductDB.find({ 'title': { '$regex': search }, "public": true }).sort({ [fld]: sort }).skip(data.skip ?? 0).limit(20));
+            res.send(await ProductDB.find({ 'title': { '$regex': search }, "public": true }, { desc: 0, images: 0 }).sort({ [fld]: sort }).skip(data.skip ?? 0).limit(20));
 
         } catch (error) {
             res.send({ 'error': "Invalid Requset" });
