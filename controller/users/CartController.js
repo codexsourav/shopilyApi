@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const ManageCart = require('../../model/CartSchema');
 module.exports = {
+
     // show the cart 
     cart: async (req, res) => {
         try {
@@ -83,7 +84,6 @@ module.exports = {
             productId = new mongoose.Types.ObjectId(productId);
             const response = await ManageCart.findOneAndUpdate({ "userId": id, productId }, { quantity }, { returnOriginal: false });
             res.send({ "success": true, response });
-
         } catch (error) {
             res.send({ "error": "Invalid Request / Server error" });
             console.log("Error", error.message);

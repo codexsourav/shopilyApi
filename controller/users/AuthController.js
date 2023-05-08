@@ -4,6 +4,18 @@ const jwt = require("jsonwebtoken");
 const Auth = require('../../model/userSchema');
 
 module.exports = {
+    profile: async (req, res) => {
+        try {
+            var id = req.authUser.id
+            const getUser = await Auth.findById(id, { pass: 0 });
+            res.send(getUser);
+        } catch (error) {
+            res.send({ "error": "Internal Server Error" });
+            console.log("Error", error.message);
+            console.log("Error", error.name);
+            console.log("Error", error.stack);
+        }
+    },
     chackauth: async (req, res) => {
         res.send({ auth: true });
     },

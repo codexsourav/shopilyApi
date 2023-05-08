@@ -32,7 +32,4 @@ userRoutes.post('/api/contact', mail);
 // offers 
 userRoutes.get('/api/offer', offers.showOffer);
 
-
-
-
 module.exports = userRoutes;
