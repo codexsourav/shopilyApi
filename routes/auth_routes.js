@@ -6,7 +6,7 @@ const authrouter = express.Router();
 
 authrouter.post('/api/auth/login', auth.login);
 authrouter.post('/api/auth/signup', auth.signup);
-userRoutes.get('/api/profile', middleware, auth.profile);
+authrouter.get('/api/profile', middleware, auth.profile);
 // authrouter.post('/api/auth/signup', auth.forgetpass);
 
 
