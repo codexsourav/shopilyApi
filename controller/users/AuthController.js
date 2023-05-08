@@ -7,7 +7,7 @@ module.exports = {
     profile: async (req, res) => {
         try {
             var id = req.authUser.id
-            const getUser = await Auth.findById(id, { pass: 0 });
+            const getUser = await Auth.findById(id, { pass: 0, token: 0 });
             res.send(getUser);
         } catch (error) {
             res.send({ "error": "Internal Server Error" });
